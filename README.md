@@ -1,5 +1,5 @@
 
-## Doom Emacs
+## Emacs config
 
 Install [Doom Emacs](https://github.com/hlissner/doom-emacs) and copy files from `.doom.d/`
 
