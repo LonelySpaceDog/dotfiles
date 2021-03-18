@@ -6,7 +6,7 @@
 
 ;; Some functionality uses this to identify you, e.g. GPG configuration, email
 ;; clients, file templates and snippets.
-(setq user-full-name "John Doe"
+(setq user-full-name "LonelySpaceDog"
       user-mail-address "john@doe.com")
 
 ;; Doom exposes five (optional) variables for controlling fonts in Doom. Here
@@ -25,7 +25,8 @@
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
-(setq doom-theme 'doom-dracula)
+(setq doom-theme 'doom-gruvbox)
+(setq doom-font (font-spec :family "RobotoMono Nerd Font" :size 12))
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
@@ -58,13 +59,14 @@
     "--trailing-comma" "all"
     "--bracket-spacing" "false"
     "--tab-width" "2"))
-;(add-hook! 'tide-mode-hook prettier-js-mode)
-;(add-hook! 'tide-mode-hook prettier-js-mode)
-;; LSP JS
+(add-hook! js2-mode-hook prettier-js-mode)
+(add-hook! web-mode-hook prettier-js-mode)
 (setq-hook! 'js2-mode-hook js2-basic-offset 2)
 (setq +format-with-lsp 'nil)
 (setq-hook! 'js2-mode-hook flycheck-checker 'javascript-eslint)
 
-(after! lsp-mode
-  (setq! lsp-javascript-format-enable 'nil)
-  (setq! lsp-typescript-format-enable 'nil))
+
+;;LSP JS
+;(after! lsp-mode
+;  (setq! lsp-javascript-format-enable 'nil)
+;  (setq! lsp-typescript-format-enable 'nil))
