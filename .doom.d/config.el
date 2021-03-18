@@ -64,8 +64,9 @@
 (setq-hook! 'js2-mode-hook js2-basic-offset 2)
 (setq +format-with-lsp 'nil)
 (setq-hook! 'js2-mode-hook flycheck-checker 'javascript-eslint)
-
-
+;;treemacs
+;(global-set-key (kbd (:leader [a])) #'treemacs)
+(map! :leader "a" #'treemacs)
 ;;LSP JS
 ;(after! lsp-mode
 ;  (setq! lsp-javascript-format-enable 'nil)
