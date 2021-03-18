@@ -54,14 +54,12 @@
 ;; they are implemented.
 ;;;
 ; Prettier-js:
-(after! prettier-js
-(setq prettier-js-args '(
-  "--trailing-comma" "all"
-  "--bracket-spacing" "false"
-  "--tab-width" "2"
-))
-(add-hook! 'js2-mode-hook prettier-js-mode)
-(add-hook! 'web-mode-hook prettier-js-mode))
+(setq! prettier-js-args '(
+    "--trailing-comma" "all"
+    "--bracket-spacing" "false"
+    "--tab-width" "2"))
+;(add-hook! 'tide-mode-hook prettier-js-mode)
+;(add-hook! 'tide-mode-hook prettier-js-mode)
 ;; LSP JS
 (setq-hook! 'js2-mode-hook js2-basic-offset 2)
 (setq +format-with-lsp 'nil)
