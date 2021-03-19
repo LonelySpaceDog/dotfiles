@@ -55,7 +55,7 @@
 ;; they are implemented.
 ;;;
 ; Prettier-js:
-(add-hook! 'prettier-js-mode-hook 'prettier-js-args '(
+(setq! prettier-js-args '(
     "--trailing-comma" "all"
     "--bracket-spacing" "false"
     "--tab-width" "2"))
