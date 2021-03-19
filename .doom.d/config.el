@@ -55,11 +55,10 @@
 ;; they are implemented.
 ;;;
 ; Prettier-js:
-(add-hook! 'prettier-js-mode-hook (λ!
-(setq! prettier-js-args '(
+(add-hook! 'prettier-js-mode-hook 'prettier-js-args '(
     "--trailing-comma" "all"
     "--bracket-spacing" "false"
-    "--tab-width" "2"))))
+    "--tab-width" "2"))
 (add-hook 'js2-mode-hook 'prettier-js-mode)
 (add-hook 'web-mode-hook 'prettier-js-mode)
 (setq-hook! 'js2-mode-hook js2-basic-offset 2)
